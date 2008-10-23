@@ -9,7 +9,7 @@
 
 Name:           madwifi-kmod
 Version:        0.9.4
-Release:        50.%(echo %{revision}| tr - _)%{?dist}.1
+Release:        50.%(echo %{revision}| tr - _)%{?dist}.2
 Summary:        Kernel module for Atheros 802.11 wireless devices ar5210,ar5211 or ar5212
 
 Group:          System Environment/Kernel
@@ -22,9 +22,7 @@ BuildRequires:  sharutils
 %define AkmodsBuildRequires sharutils
 
 # needed for plague to make sure it builds for i586 and i686
-ExclusiveArch:  i586 i686 x86_64
-# ppc and ppc64 disabled by knurd on 20081003 as it is known to fail on 2.6.27: 
-# https://bugzilla.redhat.com/show_bug.cgi?id=465486
+ExclusiveArch:  i586 i686 x86_64 ppc ppc64
 
 # get the needed BuildRequires (in parts depending on what we build for)
 BuildRequires:  %{_bindir}/kmodtool
@@ -74,6 +72,9 @@ done
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Thu Oct 23 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.9.4-50.r3867_20080924.2
+- rebuild for latest kernel
+
 * Sat Oct 04 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 0.9.4-50.r3867-20080924
 - disable ppc and ppc64
 
