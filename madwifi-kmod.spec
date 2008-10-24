@@ -22,7 +22,7 @@ BuildRequires:  sharutils
 %define AkmodsBuildRequires sharutils
 
 # needed for plague to make sure it builds for i586 and i686
-ExclusiveArch:  i586 i686 x86_64 ppc ppc64
+ExclusiveArch:  i586 i686 x86_64 ppc
 
 # get the needed BuildRequires (in parts depending on what we build for)
 BuildRequires:  %{_bindir}/kmodtool
