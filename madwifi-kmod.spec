@@ -3,13 +3,13 @@
 # "buildforkernels newest" macro for just that build; immediately after
 # queuing that build enable the macro again for subsequent builds; that way
 # a new akmod package will only get build when a new one is actually needed
-#define buildforkernels newest
+%define buildforkernels newest
 
 %define revision r3867-20080924
 
 Name:           madwifi-kmod
 Version:        0.9.4
-Release:        50.%(echo %{revision}| tr - _)%{?dist}.4
+Release:        50.%(echo %{revision}| tr - _)%{?dist}.5
 Summary:        Kernel module for Atheros 802.11 wireless devices ar5210,ar5211 or ar5212
 
 Group:          System Environment/Kernel
@@ -72,6 +72,9 @@ done
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Nov 12 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.9.4-50.r3867_20080924.5
+- rebuild for latest Fedora kernel;
+
 * Fri Nov 07 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.9.4-50.r3867_20080924.4
 - rebuild for latest Fedora kernel;
 
