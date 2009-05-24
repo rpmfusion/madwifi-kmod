@@ -9,7 +9,7 @@
 
 Name:           madwifi-kmod
 Version:        0.9.4
-Release:        50.%(echo %{revision}| tr - _)%{?dist}.15
+Release:        50.%(echo %{revision}| tr - _)%{?dist}.16
 Summary:        Kernel module for Atheros 802.11 wireless devices ar5210,ar5211 or ar5212
 
 Group:          System Environment/Kernel
@@ -72,6 +72,9 @@ done
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Sun May 24 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.9.4-50.r3867_20080924.16
+- rebuild for new kernels
+
 * Tue May 12 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.9.4-50.r3867_20080924.15
 - rebuild for new kernels
 
